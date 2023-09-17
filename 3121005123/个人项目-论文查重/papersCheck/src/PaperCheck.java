@@ -71,5 +71,22 @@ public interface PaperCheck {
         String str="该文章相同字符比为："+rat;
         writeTxt(str,"","",2);
     }
+    //将结果写入结果文件
+    public static void writeTxt(String str1,String str2,String str3,int type) throws IOException{
+        if(type==1) {
+            try (BufferedWriter writer =
+                         Files.newBufferedWriter(path, StandardCharsets.UTF_8)) {
+                writer.write(str1+str2+str3+"\r\n");
+            }
+        }else {
+            try (BufferedWriter writer =
+                         Files.newBufferedWriter(path,
+                                 StandardCharsets.UTF_8,
+                                 StandardOpenOption.APPEND)){
+                writer.write(str1+str2+str3+"\r\n");
+            }
+        }
+
+    }
 
 }
