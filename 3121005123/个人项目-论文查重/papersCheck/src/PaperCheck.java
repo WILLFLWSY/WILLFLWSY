@@ -71,6 +71,7 @@ public interface PaperCheck {
         String str="该文章相同字符比为："+rat;
         writeTxt(str,"","",2);
     }
+    
     //将结果写入结果文件
     public static void writeTxt(String str1,String str2,String str3,int type) throws IOException{
         if(type==1) {
